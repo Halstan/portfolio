@@ -47,7 +47,7 @@
 
           <v-expansion-panel-content>
             <v-divider />
-            <v-card-text v-text="lorem" />
+            <v-card-text v-text="message.body" />
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -56,60 +56,31 @@
 </template>
 
 <script>
+import { db } from '@/plugins/firebase'
+
 export default {
   data () {
     return {
-      messages: [
-        {
-          color: 'green',
-          name: 'Vue.js',
-          icon: 'mdi-vuejs',
-          excerpt: 'Vue.js es un framework que aprendí de manera...'
-        },
-        {
-          color: 'red',
-          icon: 'mdi-angular',
-          name: 'Angular',
-          excerpt: 'Un framework al que le fui agarrando el gusto con el tiempo...'
-        },
-        {
-          color: 'yellow',
-          icon: 'mdi-language-javascript',
-          name: 'Javascript',
-          excerpt: 'Al principio uno de mis dolores de cabeza por lo extraño...'
-        },
-        {
-          color: 'green',
-          icon: 'mdi-nodejs',
-          name: 'Nodejs',
-          excerpt: 'Mi siguiente paso cuando entré al mundo de Js, muy dinámico...'
-        },
-        {
-          color: '#38b0de',
-          icon: 'mdi-database',
-          name: 'MySql',
-          excerpt: 'Una BD sencilla de aprender pero dificil de dominar al 100%...'
-        },
-        {
-          color: 'blue',
-          icon: 'mdi-database',
-          name: 'PostgreSql',
-          excerpt: 'Una BD rápida, versátil y con mucha comunidad detrás de ella...'
-        },
-        {
-          color: 'orange',
-          icon: 'mdi-language-java',
-          name: 'Java',
-          excerpt: 'Mi primer lenguaje de programación aprendido, tengo un...'
-        },
-        {
-          color: 'green',
-          icon: 'mdi-leaf',
-          name: 'Spring Framework',
-          excerpt: 'Es uno de mis frameworks preferidos por lo sencillo...'
-        }
-      ],
-      lorem: 'Lorem ipsum dolor sit amet, at aliquam vivendum vel, everti delicatissimi cu eos. Dico iuvaret debitis mel an, et cum zril menandri. Eum in consul legimus accusam. Ea dico abhorreant duo, quo illum minimum incorrupte no, nostro voluptaria sea eu. Suas eligendi ius at, at nemore equidem est. Sed in error hendrerit, in consul constituam cum.'
+      messages: []
+    }
+  },
+  created () {
+    this.getMessages()
+  },
+  methods: {
+    async getMessages () {
+      try {
+        const techs = []
+        const res = await db.collection('tecnologias').get()
+        res.forEach((doc) => {
+          const tech = doc.data()
+          techs.push(tech)
+        })
+        this.messages = techs
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      }
     }
   }
 }
