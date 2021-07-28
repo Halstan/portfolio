@@ -1,8 +1,8 @@
 <template>
   <v-container>
-    <h1 class="text-center">
+    <p class="text-center text-h5 text-lg-h2 text-md-h2">
       Perfil
-    </h1>
+    </p>
     <v-img
       class="mt-2"
       lazy-src="https://i1.wp.com/vectorified.com/images/no-profile-picture-icon-21.jpg"

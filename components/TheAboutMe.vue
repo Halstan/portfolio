@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <h3>Sobre mí</h3>
+    <p class="text-h5 text-lg-h2 text-md-h2 text-center">
+      Sobre mí
+    </p>
     <p class="text-justify text-body-1">
       Estudiante egresado de la carrera de Desarrollo de Sistemas en IDAT,
       con experiencia en el área de electricidad con manejo de trabajo bajo presión y trabajo en equipo.

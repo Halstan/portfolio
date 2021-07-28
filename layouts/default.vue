@@ -5,6 +5,9 @@
       fixed
       app
     >
+      <v-btn icon nuxt to="/">
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
       <v-btn
         icon
         @click.stop="fixed = !fixed"
@@ -13,6 +16,9 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-btn nuxt to="/contact" text>
+        Contacto
+      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
