@@ -36,7 +36,7 @@ export default {
       message: '',
       email: '',
       name: '',
-      snack: true,
+      snack: false,
       text: 'Correo enviado exitosamente',
       color: 'success'
     }
