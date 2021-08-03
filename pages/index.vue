@@ -18,6 +18,9 @@
           <v-tab @click="changeComponent('TheProjects')">
             Proyectos
           </v-tab>
+          <v-tab @click="changeComponent('TheExperience')">
+            Experiencia
+          </v-tab>
         </v-tabs>
       </v-app-bar>
       <keep-alive>
@@ -35,6 +38,7 @@ import TheEducation from '~/components/TheEducation.vue'
 import TheProjects from '~/components/TheProjects.vue'
 import TheProfile from '~/components/TheProfile.vue'
 import TheAboutMe from '~/components/TheAboutMe.vue'
+import TheExperience from '~/components/TheExperience.vue'
 
 export default {
   components: {
@@ -42,7 +46,8 @@ export default {
     TheEducation,
     TheProfile,
     TheProjects,
-    TheAboutMe
+    TheAboutMe,
+    TheExperience
   },
   data () {
     return {
