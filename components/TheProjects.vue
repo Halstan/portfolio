@@ -14,7 +14,6 @@
               no-gutters
             >
               <v-col
-                class="hidden-xs-only"
                 sm="5"
                 md="3"
               >

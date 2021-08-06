@@ -1,9 +1,9 @@
 <template>
   <v-row justify="center">
-    <v-col cols="3">
+    <v-col cols="12" sm="3" lg="3" md="3">
       <TheProfile />
     </v-col>
-    <v-col cols="9">
+    <v-col cols="12" sm="9" lg="9" md="9">
       <h1 class="text-center">
         <the-about-me />
       </h1>
