@@ -20,7 +20,7 @@
     "emailjs-com": "^3.2.0",
     "firebase": "^8.7.1",
     "nuxt": "^2.15.7",
-    "vuetify": "^2.5.5"
+    "vuetify": "^2.6.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
